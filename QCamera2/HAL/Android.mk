@@ -18,6 +18,11 @@ LOCAL_SRC_FILES := \
         wrapper/QualcommCamera.cpp
 
 LOCAL_CFLAGS = -Wall
+LOCAL_CLANG_CFLAGS += \
+    -Wno-error=unused-variable \
+    -Wno-error=sign-compare \
+    -Wno-error=unused-parameter \
+    -Wno-error=unused-private-field 
 
 LOCAL_CFLAGS += -DHAS_MULTIMEDIA_HINTS -DDEFAULT_ZSL_MODE_ON -DDEFAULT_DENOISE_MODE_ON -DCANCRO_CAMERA_HAL
 
