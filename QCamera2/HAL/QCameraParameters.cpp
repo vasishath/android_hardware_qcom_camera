@@ -2841,7 +2841,7 @@ int32_t QCameraParameters::setMCEValue(const QCameraParameters& params)
  *              NO_ERROR  -- success
  *              none-zero failure code
  *==========================================================================*/
-int32_t QCameraParameters::setDISValue(const QCameraParameters& params)
+int32_t QCameraParameters::setDISValue(__unused const QCameraParameters& params)
 {
     const char *str = params.get(KEY_QC_DIS);
     const char *prev_str = get(KEY_QC_DIS);
@@ -9358,7 +9358,6 @@ QCameraReprocScaleParam::QCameraReprocScaleParam(QCameraParameters *parent)
   : mParent(parent),
     mScaleEnabled(false),
     mIsUnderScaling(false),
-    mScaleDirection(0),
     mNeedScaleCnt(0),
     mSensorSizeTblCnt(0),
     mSensorSizeTbl(NULL),
