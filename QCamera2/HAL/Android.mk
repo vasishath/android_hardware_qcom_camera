@@ -17,9 +17,9 @@ LOCAL_SRC_FILES := \
         QCameraThermalAdapter.cpp \
         wrapper/QualcommCamera.cpp
 
-LOCAL_CFLAGS = -Wall -Wextra -Werror
+LOCAL_CFLAGS = -Wall
 
-LOCAL_CFLAGS += -DHAS_MULTIMEDIA_HINTS
+LOCAL_CFLAGS += -DHAS_MULTIMEDIA_HINTS -DDEFAULT_ZSL_MODE_ON -DDEFAULT_DENOISE_MODE_ON -DCANCRO_CAMERA_HAL
 
 #Debug logs are enabled
 #LOCAL_CFLAGS += -DDISABLE_DEBUG_LOG

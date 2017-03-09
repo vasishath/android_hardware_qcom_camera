@@ -1094,6 +1094,11 @@ typedef enum {
     CAM_INTF_PARM_CDS_MODE,
     CAM_INTF_PARM_LONGSHOT_ENABLE,
 
+#ifdef CANCRO_CAMERA_HAL
+    XIAOMI_CUST_ENUM1,
+    XIAOMI_CUST_ENUM2,
+#endif
+
     /* stream based parameters */
     CAM_INTF_PARM_DO_REPROCESS,
     CAM_INTF_PARM_SET_BUNDLE,

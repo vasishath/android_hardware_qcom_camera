@@ -70,8 +70,13 @@ typedef struct{
     cam_iso_mode_type supported_iso_modes[CAM_ISO_MODE_MAX];
 
     /* supported exposure time */
+#ifdef CANCRO_CAMERA_HAL
+    float min_exposure_time;
+    float max_exposure_time;
+#else
     int32_t min_exposure_time;
     int32_t max_exposure_time;
+#endif
 
     /* supported flash modes */
     size_t supported_flash_modes_cnt;
@@ -114,6 +119,11 @@ typedef struct{
     /* supported manual focus position */
     int32_t min_focus_pos[CAM_MANUAL_FOCUS_MODE_MAX];
     int32_t max_focus_pos[CAM_MANUAL_FOCUS_MODE_MAX];
+
+#ifdef CANCRO_CAMERA_HAL
+    int32_t xiaomi_custom_param; //Offset 8 bytes from here
+    int32_t xiaomi_custom_param2; //Offset 8 bytes from here
+#endif
 
     int32_t exposure_compensation_min;       /* min value of exposure compensation index */
     int32_t exposure_compensation_max;       /* max value of exposure compensation index */
