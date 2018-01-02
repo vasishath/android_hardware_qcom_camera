@@ -19,9 +19,9 @@
 
 /*#error uncomment this for compiler test!*/
 
-#define LOG_NDEBUG 0
-#define LOG_NDDEBUG 0
-#define LOG_NIDEBUG 0
+#define LOG_NDEBUG 1
+#define LOG_NDDEBUG 1
+#define LOG_NIDEBUG 1
 #define LOG_TAG "QCameraHWI_Still"
 #include <utils/Log.h>
 #include <utils/threads.h>

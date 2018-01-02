@@ -18,7 +18,7 @@
 */
 
 //#define ALOG_NDEBUG 0
-#define ALOG_NIDEBUG 0
+#define ALOG_NIDEBUG 1
 #define LOG_TAG "QCameraHWI_Parm"
 #include <utils/Log.h>
 

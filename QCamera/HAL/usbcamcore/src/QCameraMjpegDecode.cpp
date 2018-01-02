@@ -27,7 +27,7 @@
  */
 
 //#define ALOG_NDEBUG 0
-#define ALOG_NIDEBUG 0
+#define ALOG_NIDEBUG 1
 #define LOG_TAG "QCameraMjpegDecode"
 #include <utils/Log.h>
 
