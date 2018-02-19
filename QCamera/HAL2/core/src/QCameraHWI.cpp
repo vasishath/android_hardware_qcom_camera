@@ -16,7 +16,7 @@
 
 /*#error uncomment this for compiler test!*/
 
-#define LOG_NIDEBUG 0
+#define LOG_NIDEBUG 1
 //#define LOG_NDEBUG 0
 
 #define LOG_TAG "QCameraHWI"

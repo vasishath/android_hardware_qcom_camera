@@ -91,10 +91,9 @@ private:
     size_t checkScaleSizeTable(size_t scale_cnt, cam_dimension_t *scale_tbl,
             size_t org_cnt, cam_dimension_t *org_tbl);
 
-    QCameraParameters *mParent;
+    QCameraParameters (*mParent);
     bool mScaleEnabled;
     bool mIsUnderScaling;   //if in scale status
-    bool mScaleDirection;   // 0: Upscaling; 1: Downscaling
 
     // picture size cnt that need scale operation
     size_t mNeedScaleCnt;
@@ -117,6 +116,8 @@ class QCameraParameters: public CameraParameters
 public:
     QCameraParameters();
     QCameraParameters(const String8 &params);
+    static const char CameraParameters::FOCUS_MODE_MANUAL_POSITION[];
+    static const char CameraParameters::WHITE_BALANCE_MANUAL_CCT[];
     ~QCameraParameters();
 
     // Supported PREVIEW/RECORDING SIZES IN HIGH FRAME RATE recording, sizes in pixels.
@@ -201,8 +202,8 @@ public:
     static const char KEY_QC_MIN_WB_CCT[];
     static const char KEY_QC_MAX_WB_CCT[];
     static const char KEY_QC_LONG_SHOT[];
-    static const char WHITE_BALANCE_MANUAL_CCT[];
-    static const char FOCUS_MODE_MANUAL_POSITION[];
+//    static const char WHITE_BALANCE_MANUAL_CCT[];
+//    static const char FOCUS_MODE_MANUAL_POSITION[];
 
     static const char KEY_QC_MANUAL_FOCUS_POSITION[];
     static const char KEY_QC_MANUAL_FOCUS_POS_TYPE[];
@@ -267,6 +268,10 @@ public:
     //AF Bracketing
     static const char KEY_QC_AF_BRACKET[];
     static const char KEY_QC_SUPPORTED_AF_BRACKET_MODES[];
+
+    //Morpho HDR
+    static const char KEY_QC_MORPHO_HDR[];
+    static const char KEY_QC_SUPPORTED_MORPHO_HDR_MODES[];
 
     //Chroma Flash
     static const char KEY_QC_CHROMA_FLASH[];

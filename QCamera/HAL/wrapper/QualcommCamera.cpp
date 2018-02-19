@@ -29,7 +29,7 @@
 /*#error uncomment this for compiler test!*/
 
 //#define ALOG_NDEBUG 0
-#define ALOG_NIDEBUG 0
+#define ALOG_NIDEBUG 1
 #define LOG_TAG "QualcommCamera"
 #include <utils/Log.h>
 #include <utils/threads.h>

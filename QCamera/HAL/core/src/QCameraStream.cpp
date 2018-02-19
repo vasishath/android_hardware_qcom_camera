@@ -19,8 +19,8 @@
 
 /*#error uncomment this for compiler test!*/
 
-#define ALOG_NDEBUG 0
-#define ALOG_NIDEBUG 0
+#define ALOG_NDEBUG 1
+#define ALOG_NIDEBUG 1
 #define LOG_TAG __FILE__
 #include <utils/Log.h>
 

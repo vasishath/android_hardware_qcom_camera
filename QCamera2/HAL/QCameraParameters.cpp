@@ -45,6 +45,8 @@
 
 namespace qcamera {
 // Parameter keys to communicate between camera application and driver.
+const char QCameraParameters::FOCUS_MODE_MANUAL_POSITION[] = "manual";
+const char QCameraParameters::WHITE_BALANCE_MANUAL_CCT[] = "manual-cct";
 const char QCameraParameters::KEY_QC_SUPPORTED_HFR_SIZES[] = "hfr-size-values";
 const char QCameraParameters::KEY_QC_PREVIEW_FRAME_RATE_MODE[] = "preview-frame-rate-mode";
 const char QCameraParameters::KEY_QC_SUPPORTED_PREVIEW_FRAME_RATE_MODES[] = "preview-frame-rate-modes";
@@ -127,6 +129,8 @@ const char QCameraParameters::KEY_QC_CDS_MODE[] = "cds-mode";
 const char QCameraParameters::KEY_QC_VIDEO_ROTATION[] = "video-rotation";
 const char QCameraParameters::KEY_QC_AF_BRACKET[] = "af-bracket";
 const char QCameraParameters::KEY_QC_SUPPORTED_AF_BRACKET_MODES[] = "af-bracket-values";
+const char QCameraParameters::KEY_QC_MORPHO_HDR[] = "morpho-hdr";
+const char QCameraParameters::KEY_QC_SUPPORTED_MORPHO_HDR_MODES[] = "morpho-hdr-values";
 const char QCameraParameters::KEY_QC_CHROMA_FLASH[] = "chroma-flash";
 const char QCameraParameters::KEY_QC_SUPPORTED_CHROMA_FLASH_MODES[] = "chroma-flash-values";
 const char QCameraParameters::KEY_QC_OPTI_ZOOM[] = "opti-zoom";
@@ -148,8 +152,8 @@ const char QCameraParameters::KEY_QC_LONG_SHOT[] = "long-shot";
 const char QCameraParameters::KEY_QC_LONGSHOT_SUPPORTED[] = "longshot-supported";
 const char QCameraParameters::KEY_QC_ZSL_HDR_SUPPORTED[] = "zsl-hdr-supported";
 const char QCameraParameters::KEY_QC_AUTO_HDR_SUPPORTED[] = "auto-hdr-supported";
-const char QCameraParameters::WHITE_BALANCE_MANUAL_CCT[] = "manual-cct";
-const char QCameraParameters::FOCUS_MODE_MANUAL_POSITION[] = "manual";
+//const char QCameraParameters::WHITE_BALANCE_MANUAL_CCT[] = "manual-cct";
+//const char QCameraParameters::FOCUS_MODE_MANUAL_POSITION[] = "manual";
 
 // Values for effect settings.
 const char QCameraParameters::EFFECT_EMBOSS[] = "emboss";
@@ -2841,7 +2845,7 @@ int32_t QCameraParameters::setMCEValue(const QCameraParameters& params)
  *              NO_ERROR  -- success
  *              none-zero failure code
  *==========================================================================*/
-int32_t QCameraParameters::setDISValue(const QCameraParameters& params)
+int32_t QCameraParameters::setDISValue(__unused const QCameraParameters& params)
 {
     const char *str = params.get(KEY_QC_DIS);
     const char *prev_str = get(KEY_QC_DIS);
@@ -9358,7 +9362,6 @@ QCameraReprocScaleParam::QCameraReprocScaleParam(QCameraParameters *parent)
   : mParent(parent),
     mScaleEnabled(false),
     mIsUnderScaling(false),
-    mScaleDirection(0),
     mNeedScaleCnt(0),
     mSensorSizeTblCnt(0),
     mSensorSizeTbl(NULL),
